@@ -116,7 +116,24 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            txtTenLoaiDuAn.Enabled = true;
+            string tukhoa = txtTenLoaiDuAn.Text.Trim();
+            if (!string.IsNullOrEmpty(tukhoa))
+            {
+                frmLoaiDuAn_Load(sender, e);
+            }
+            if (int.TryParse(tukhoa, out int tenCanTim))
 
+            {
+                var lda = context.LoaiDuAn.Find(tenCanTim);
+                if (lda != null)
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = new List<LoaiDuAn> { lda };
+                    dataGridView.DataSource = bs;
+                }
+            }
+            else { MessageBox.Show("Vui lòng nhập Tên loại cần tìm"); }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
