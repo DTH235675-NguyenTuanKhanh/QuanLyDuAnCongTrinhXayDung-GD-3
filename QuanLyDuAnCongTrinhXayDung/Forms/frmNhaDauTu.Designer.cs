@@ -50,16 +50,16 @@
             txtTenNhaDauTu = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            dgvKhachHang = new DataGridView();
-            nhaDauTuBindingSource = new BindingSource(components);
+            dataGridView = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             TenNhaDauTu = new DataGridViewTextBoxColumn();
             MaSoThue = new DataGridViewTextBoxColumn();
             DiaChi = new DataGridViewTextBoxColumn();
             SoDienThoai = new DataGridViewTextBoxColumn();
+            nhaDauTuBindingSource = new BindingSource(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvKhachHang).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nhaDauTuBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -122,6 +122,7 @@
             btnThoat.TabIndex = 21;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnTimKiem
             // 
@@ -144,6 +145,7 @@
             btnHuyBo.TabIndex = 19;
             btnHuyBo.Text = "Hủy Bỏ";
             btnHuyBo.UseVisualStyleBackColor = false;
+            btnHuyBo.Click += btnHuyBo_Click;
             // 
             // btnLuu
             // 
@@ -155,6 +157,7 @@
             btnLuu.TabIndex = 18;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = false;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnXoa
             // 
@@ -166,6 +169,7 @@
             btnXoa.TabIndex = 17;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -177,6 +181,7 @@
             btnSua.TabIndex = 16;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = false;
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -188,6 +193,7 @@
             btnThem.TabIndex = 1;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = false;
+            btnThem.Click += btnThem_Click;
             // 
             // txtMaSoThue
             // 
@@ -255,7 +261,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dgvKhachHang);
+            groupBox2.Controls.Add(dataGridView);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(12, 238);
             groupBox2.Name = "groupBox2";
@@ -264,13 +270,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách Nhà đầu tư";
             // 
-            // dgvKhachHang
+            // dataGridView
             // 
-            dgvKhachHang.AllowUserToAddRows = false;
-            dgvKhachHang.AllowUserToDeleteRows = false;
-            dgvKhachHang.AutoGenerateColumns = false;
-            dgvKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvKhachHang.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AutoGenerateColumns = false;
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -278,10 +284,10 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvKhachHang.ColumnHeadersHeight = 29;
-            dgvKhachHang.Columns.AddRange(new DataGridViewColumn[] { Id, TenNhaDauTu, MaSoThue, DiaChi, SoDienThoai });
-            dgvKhachHang.DataSource = nhaDauTuBindingSource;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.ColumnHeadersHeight = 29;
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, TenNhaDauTu, MaSoThue, DiaChi, SoDienThoai });
+            dataGridView.DataSource = nhaDauTuBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle2.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 163);
@@ -289,16 +295,12 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
             dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvKhachHang.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvKhachHang.Location = new Point(0, 33);
-            dgvKhachHang.Name = "dgvKhachHang";
-            dgvKhachHang.RowHeadersWidth = 51;
-            dgvKhachHang.Size = new Size(1259, 429);
-            dgvKhachHang.TabIndex = 0;
-            // 
-            // nhaDauTuBindingSource
-            // 
-            nhaDauTuBindingSource.DataSource = typeof(Data.NhaDauTu);
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.Location = new Point(0, 33);
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.Size = new Size(1259, 429);
+            dataGridView.TabIndex = 0;
             // 
             // Id
             // 
@@ -343,6 +345,10 @@
             SoDienThoai.MinimumWidth = 6;
             SoDienThoai.Name = "SoDienThoai";
             // 
+            // nhaDauTuBindingSource
+            // 
+            nhaDauTuBindingSource.DataSource = typeof(Data.NhaDauTu);
+            // 
             // frmNhaDauTu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -352,10 +358,11 @@
             Controls.Add(groupBox1);
             Name = "frmNhaDauTu";
             Text = "Nhà Đầu Tư";
+            Load += frmNhaDauTu_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvKhachHang).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)nhaDauTuBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -385,7 +392,7 @@
         private TextBox txtTenNhaDauTu;
         private Label label1;
         private GroupBox groupBox2;
-        private DataGridView dgvKhachHang;
+        private DataGridView dataGridView;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn TenNhaDauTu;
         private DataGridViewTextBoxColumn MaSoThue;

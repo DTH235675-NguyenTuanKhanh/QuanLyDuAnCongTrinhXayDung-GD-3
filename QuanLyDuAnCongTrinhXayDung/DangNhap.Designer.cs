@@ -33,6 +33,8 @@
             btnLoaiDA = new Button();
             btnCongViec = new Button();
             btnBangLuong = new Button();
+            button1 = new Button();
+            btnNhatKy = new Button();
             SuspendLayout();
             // 
             // NhanVien
@@ -85,11 +87,33 @@
             btnBangLuong.UseVisualStyleBackColor = true;
             btnBangLuong.Click += btnBangLuong_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(226, 123);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 5;
+            button1.Text = "Nhà đầu tư";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // btnNhatKy
+            // 
+            btnNhatKy.Location = new Point(389, 123);
+            btnNhatKy.Name = "btnNhatKy";
+            btnNhatKy.Size = new Size(94, 29);
+            btnNhatKy.TabIndex = 6;
+            btnNhatKy.Text = "Nhật ký";
+            btnNhatKy.UseVisualStyleBackColor = true;
+            btnNhatKy.Click += btnNhatKy_Click;
+            // 
             // DangNhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnNhatKy);
+            Controls.Add(button1);
             Controls.Add(btnBangLuong);
             Controls.Add(btnCongViec);
             Controls.Add(btnLoaiDA);
@@ -108,5 +132,7 @@
         private Button btnLoaiDA;
         private Button btnCongViec;
         private Button btnBangLuong;
+        private Button button1;
+        private Button btnNhatKy;
     }
 }

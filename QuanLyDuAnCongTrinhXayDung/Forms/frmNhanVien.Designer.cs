@@ -242,6 +242,7 @@
             // cboQuyenHan
             // 
             cboQuyenHan.FormattingEnabled = true;
+            cboQuyenHan.Items.AddRange(new object[] { "Kỹ Sư", "Nhân Viên" });
             cboQuyenHan.Location = new Point(984, 37);
             cboQuyenHan.Name = "cboQuyenHan";
             cboQuyenHan.Size = new Size(249, 36);

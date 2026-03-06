@@ -32,7 +32,7 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
             btnThoat.Enabled = !b;
             btnNhap.Enabled = !b;
             btnXuat.Enabled = !b;
-            txtTenCongViec.Enabled = !b;
+            txtTenCongViec.Enabled = b;
         }
 
         private void frmCongViec_Load(object sender, EventArgs e)

@@ -55,13 +55,13 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
             btnThoat.Enabled = !b;
             btnNhap.Enabled = !b;
             btnXuat.Enabled = !b;
-            cboNhanVien.Enabled = !b;
-            txtNam.Enabled = !b;
-            txtThang.Enabled = !b;
-            txtSoNgayCong.Enabled = !b;
-            txtTongPhuCap.Enabled = !b;
-            txtThucLinh.Enabled = !b;
-            txtLuongCoBan.Enabled = !b;
+            cboNhanVien.Enabled = b;
+            txtNam.Enabled = b;
+            txtThang.Enabled = b;
+            txtSoNgayCong.Enabled = b;
+            txtTongPhuCap.Enabled = b;
+            txtThucLinh.Enabled = b;
+            txtLuongCoBan.Enabled = b;
         }
         private void ClearText()
         {

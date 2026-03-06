@@ -31,10 +31,10 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
             btnThoat.Enabled = !b;
             btnNhap.Enabled = !b;
             btnXuat.Enabled = !b;
-            cboDuAn.Enabled = !b;
-            txtGhiChu.Enabled = !b;
-            txtNoiDungCongViec.Enabled = !b;
-            dtpNgayGhi.Enabled = !b;
+            cboDuAn.Enabled = b;
+            txtGhiChu.Enabled = b;
+            txtNoiDungCongViec.Enabled = b;
+            dtpNgayGhi.Enabled = b;
         }
         private void ClearText()
         {

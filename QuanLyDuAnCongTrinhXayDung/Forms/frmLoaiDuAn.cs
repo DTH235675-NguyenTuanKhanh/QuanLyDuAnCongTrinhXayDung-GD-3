@@ -31,7 +31,7 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
             btnThoat.Enabled = !b;
             btnNhap.Enabled = !b;
             btnXuat.Enabled = !b;
-            txtTenLoaiDuAn.Enabled = !b;
+            txtTenLoaiDuAn.Enabled = b;
         }
 
         private void label2_Click(object sender, EventArgs e)

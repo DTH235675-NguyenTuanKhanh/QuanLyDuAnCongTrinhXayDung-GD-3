@@ -115,10 +115,8 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
             txtTenDangNhap.DataBindings.Add("Text", bindingSource, "TenDangNhap", false, DataSourceUpdateMode.Never);
             txtMatKhau.DataBindings.Add("Text", bindingSource, "MatKhau", false, DataSourceUpdateMode.Never);
             txtLuongCoBan.DataBindings.Add("Text", bindingSource, "LuongCoBan", false, DataSourceUpdateMode.Never);
-            cboQuyenHan.DataBindings.Add("Text", bindingSource, "QuyenHan", false, DataSourceUpdateMode.Never);
-            dgvNhanVien.DataSource = bindingSource;
-            cboQuyenHan.Items.Add("Quản lí");
-            cboQuyenHan.Items.Add("Nhân viên");
+            cboQuyenHan.DataBindings.Add("SelectedIndex", bindingSource, "QuyenHan", false, DataSourceUpdateMode.Never);
+            dgvNhanVien.DataSource = bindingSource;            
             dgvNhanVien.RowPostPaint += dgvNhanVien_RowPostPaint;
 
             dgvNhanVien.DataSource = context.NhanVien.ToList();
@@ -175,7 +173,7 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
                     nv.MatKhau = txtMatKhau.Text;
                     nv.ChuyenMon = txtChuyenMon.Text;
                     nv.LuongCoBan = Convert.ToDecimal(txtLuongCoBan.Text);
-                    nv.QuyenHan = cboQuyenHan.Text == "Quản lí" ? true : false;
+                    nv.QuyenHan = cboQuyenHan.SelectedIndex == 0 ? true : false;
                     context.NhanVien.Add(nv);
                     context.SaveChanges();
                     MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -192,7 +190,7 @@ namespace QuanLyDuAnCongTrinhXayDung.Forms
                         nv.MatKhau = txtMatKhau.Text;
                         nv.ChuyenMon = txtChuyenMon.Text;
                         nv.LuongCoBan = Convert.ToDecimal(txtLuongCoBan.Text);
-                        nv.QuyenHan = cboQuyenHan.Text == "Quản lí" ? true : false;
+                        nv.QuyenHan = cboQuyenHan.SelectedIndex == 0 ? true : false;
                         context.NhanVien.Update(nv);
                         context.SaveChanges();
                         MessageBox.Show("Sửa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
